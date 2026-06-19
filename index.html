@@ -1,119 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Cardona — Digital Marketing Project Manager</title>
+<meta name="description" content="David Cardona — Digital Marketing Project Manager. Content, SEO & strategy, AI-powered automation. 5+ years leading content and marketing projects across agencies and tech companies (iVisa, McCann, Ariadna).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F1E9;
+    --paper-2:#EBE7DC;
+    --ink:#111110;
+    --ink-soft:#3a3a36;
+    --vermilion:#E8431F;
+    --vermilion-dk:#C9360F;
+    --line:#111110;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    line-height:1.45;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--vermilion);color:#fff}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+  .mono{font-family:'Space Mono',monospace}
+  .label{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:2px solid var(--line)}
+  nav .bar{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .mono-logo{font-family:'Anton',sans-serif;font-size:24px;letter-spacing:1px}
+  .mono-logo span{color:var(--vermilion)}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.05em;position:relative}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--vermilion);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .badge{border:2px solid var(--line);padding:5px 10px;font-family:'Space Mono',monospace;font-size:12px;font-weight:700}
+  .badge b{color:var(--vermilion)}
+  @media(max-width:780px){.nav-links a:not(.badge){display:none}}
+
+  /* HERO */
+  header{padding:60px 0 30px;border-bottom:2px solid var(--line)}
+  .kicker{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:26px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--vermilion);display:inline-block;animation:pulse 1.8s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+  .giant{font-family:'Anton',sans-serif;font-weight:400;line-height:.86;letter-spacing:-.5px;
+    font-size:clamp(58px,13.5vw,210px);text-transform:uppercase}
+  .giant .out{color:transparent;-webkit-text-stroke:2px var(--ink)}
+  .giant em{font-style:normal;color:var(--vermilion)}
+  .hero-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:40px;align-items:end;margin-top:34px}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:28px}}
+  .role{font-size:clamp(18px,2.4vw,26px);font-weight:600;max-width:26ch}
+  .role b{color:var(--vermilion)}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .chip{border:2px solid var(--line);padding:8px 14px;font-family:'Space Mono',monospace;font-size:13px;background:var(--paper)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border:2px solid var(--line);
+    font-family:'Space Mono',monospace;font-weight:700;font-size:14px;transition:transform .12s,box-shadow .12s,background .2s,color .2s}
+  .btn.primary{background:var(--vermilion);color:#fff;border-color:var(--vermilion)}
+  .btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
+  .btn.primary:hover{box-shadow:5px 5px 0 var(--ink)}
+  .photo-card{position:relative}
+  .photo-card img{width:100%;display:block;filter:grayscale(1) contrast(1.08);
+    border:3px solid var(--line);mix-blend-mode:multiply}
+  .photo-card .tag{position:absolute;bottom:-2px;left:-2px;background:var(--vermilion);color:#fff;
+    font-family:'Space Mono',monospace;font-size:12px;padding:6px 12px;border:3px solid var(--line)}
+
+  /* MARQUEE */
+  .marquee{border-bottom:2px solid var(--line);background:var(--ink);color:var(--paper);overflow:hidden;padding:16px 0}
+  .marquee .track{display:flex;gap:0;width:max-content;animation:scroll 28s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  .marquee .item{font-family:'Anton',sans-serif;font-size:30px;text-transform:uppercase;padding:0 26px;white-space:nowrap;letter-spacing:.5px}
+  .marquee .item .s{color:var(--vermilion)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* SECTION */
+  section{padding:84px 0;border-bottom:2px solid var(--line)}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:46px;flex-wrap:wrap}
+  .sec-num{font-family:'Space Mono',monospace;color:var(--vermilion);font-weight:700;font-size:15px}
+  .sec-title{font-family:'Anton',sans-serif;font-size:clamp(34px,6vw,72px);text-transform:uppercase;line-height:.9;letter-spacing:-.5px}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:54px}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:34px}}
+  .lede{font-size:clamp(19px,2.3vw,27px);font-weight:500;line-height:1.5}
+  .lede b{color:var(--vermilion)}
+  .body-txt{font-size:16px;color:var(--ink-soft);margin-top:18px;line-height:1.6}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--line)}
+  .stat{padding:22px;border-bottom:2px solid var(--line)}
+  .stat:nth-child(odd){border-right:2px solid var(--line)}
+  .stat:nth-last-child(-n+2){border-bottom:0}
+  .stat .n{font-family:'Anton',sans-serif;font-size:46px;line-height:1;color:var(--vermilion)}
+  .stat .t{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.04em;margin-top:8px;text-transform:uppercase}
+
+  /* EXPERIENCE */
+  .exp{display:grid;grid-template-columns:auto 1fr;gap:0;border-top:2px solid var(--line)}
+  .exp-row{display:contents}
+  .exp-item{border-bottom:2px solid var(--line);padding:34px 0 34px 8px;display:grid;
+    grid-template-columns:90px 1.1fr 2fr;gap:26px;align-items:start;transition:background .25s}
+  .exp-item:hover{background:var(--paper-2)}
+  .exp-item .idx{font-family:'Anton',sans-serif;font-size:40px;color:var(--vermilion);line-height:.9}
+  .exp-co{font-family:'Anton',sans-serif;font-size:clamp(22px,2.6vw,32px);text-transform:uppercase;line-height:.95}
+  .exp-role{font-weight:600;font-size:15px;margin-top:8px}
+  .exp-when{font-family:'Space Mono',monospace;font-size:12.5px;color:var(--ink-soft);margin-top:8px}
+  .exp-loc{font-family:'Space Mono',monospace;font-size:12px;color:var(--vermilion);margin-top:3px}
+  .exp-pts{list-style:none}
+  .exp-pts li{position:relative;padding-left:22px;margin-bottom:11px;font-size:15px;color:var(--ink-soft);line-height:1.5}
+  .exp-pts li::before{content:"→";position:absolute;left:0;color:var(--vermilion);font-weight:700}
+  @media(max-width:820px){.exp-item{grid-template-columns:1fr;gap:14px;padding:28px 0}.exp-item .idx{font-size:32px}}
+
+  /* GRID TWO */
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--line)}
+  @media(max-width:820px){.two{grid-template-columns:1fr}}
+  .panel{padding:34px}
+  .panel:first-child{border-right:2px solid var(--line)}
+  @media(max-width:820px){.panel:first-child{border-right:0;border-bottom:2px solid var(--line)}}
+  .panel h3{font-family:'Anton',sans-serif;font-size:26px;text-transform:uppercase;margin-bottom:22px;letter-spacing:.5px}
+  .edu-item{margin-bottom:20px}
+  .edu-item .d{font-weight:700;font-size:17px}
+  .edu-item .s{font-family:'Space Mono',monospace;font-size:13px;color:var(--ink-soft);margin-top:3px}
+  .list-clean{list-style:none}
+  .list-clean li{padding:11px 0;border-bottom:1px dashed #aaa3;font-size:14.5px;display:flex;gap:10px}
+  .list-clean li:last-child{border-bottom:0}
+  .list-clean li span{color:var(--vermilion);font-family:'Space Mono',monospace}
+  .lang-bar{margin-bottom:20px}
+  .lang-bar .top{display:flex;justify-content:space-between;font-weight:600;margin-bottom:7px}
+  .lang-bar .top em{font-style:normal;font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-soft)}
+  .track-bg{height:12px;background:var(--paper-2);border:2px solid var(--line)}
+  .track-fill{height:100%;background:var(--vermilion);width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+
+  /* CONTACT */
+  #contact{background:var(--ink);color:var(--paper);border-bottom:0}
+  #contact .sec-title{color:var(--paper)}
+  #contact .label{color:#bbb}
+  .contact-giant{font-family:'Anton',sans-serif;font-size:clamp(40px,9vw,140px);text-transform:uppercase;line-height:.88;letter-spacing:-1px;margin:10px 0 30px}
+  .contact-giant a{color:var(--paper);transition:color .2s}
+  .contact-giant a:hover{color:var(--vermilion)}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+  .contact-links a{border:2px solid var(--paper);padding:14px 22px;font-family:'Space Mono',monospace;font-weight:700;font-size:14px;transition:all .15s}
+  .contact-links a:hover{background:var(--vermilion);border-color:var(--vermilion);transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--paper)}
+  footer{padding:30px 0;font-family:'Space Mono',monospace;font-size:12px;color:#999;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
 </head>
-<h1>Alejandro Cardona Molina</h1>
-<img src="images/foto.jpg" alt="photo" style="width: 150px; border-radius: 10px;">
-<p>
-    Industrial Engineer with knowledge and experience coordinating digital projects with multidisciplinary teams,
-    strategies design for resources optimization, oriented to the search for innovative solutions. With leadership and
-    problem-solving skills.
-</p>
-<hr>
-<h2>Education</h2>
-
-<ul>
-    <li><b>Industrial Engineer</b>
-        <br>Universidad Nacional de Colombia 2016
-    </li>
-    <li><b>Systems Engineer</b> (6 Semesters)
-        <br>Universidad de Caldas
-    </li>
-    <li><b>Tools and Programs:</b> Microsoft Office, Blender, 3ds Max, Photoshop, HTML, CSS, Javascript.</li>
-</ul>
-
-
-<h2>Additional Studies</h2>
-<ul>
-    <li>WordPress SEO. LinkedIn Learning 2022</li>
-    <li>Figma: Working with Clients. LinkedIn Learning 2022</li>
-    <li>Figma Essential Training: The Basics. LinkedIn Learning 2022</li>
-    <li>Fundamentals of Python Programming, Misión TIC 2022</li>
-    <li>Basic Programming with Language Java, Misión TIC 2022</li>
-    <li>Project Initiation: Starting a Successful Project. Google 2021</li>
-    <li>Foundations of Project Management. Google 2021</li>
-    <li>Creativity and digital strategyl SHARE IT. The Pub School 2020.</li>
-    <li>Strategic Planning Course. La Academia by Ariadna 2020.</li>
-    <li>Search Engine Optimization (SEO). La Academia by Ariadna 2020.</li>
-    <li>Intro to SQL for Data Science, DataCamp 2019.</li>
-    <li>Google Analitycs Individual Qualification. Google Academy 2019.</li>
-    <li>Basic course in Digital Marketing Google actívate. Iab.spain 2017.</li>
-    <li>Diploma in strengthening in 3D Animation AniMadeLab Universidad Nacional de Colombia.2014.</li>
-</ul>
-
-<hr>
-
-<h2>Work experience</h2>
-
-<hr>
-<h3>Company name</h3>
-<p>McCANN COLOMBIA</p>
-<h3>Charge</h3>
-<p>Senior Project Manager</p>
-<h3>Functions</h3>
-<ul>
-    <li>Coordinate web development projects from the initial request of the client, until deliver to the client's
-        satisfaction.</li>
-    <li>Prepare the project budget and its timeline</li>
-    <li> Follow-up team activities to meet project deliverables</li>
-    <li> Coordinate with the different areas to achieve the project requirements</li>
-    <li> Coordinate with the client the different requests</li>
-</ul>
-<h2>Date:</h2>
-<p>July 2021- August 2022</p>
-</p>
-
-<hr>
-<h3>Company name</h3>
-<p>ARIADNA COMMUNICATIONS GROUP</p>
-<h3>Charge</h3>
-<p>PROJECT MANAGER</p>
-<h3>Functions</h3>
-<ul>
-    <li>Receive briefs from clients and evaluate the feasibility of projects.</li>
-    <li>Prepare the project budget and its timeline</li>
-    <li> Follow-up team activities to meet project deliverables</li>
-    <li> Coordinate with the different areas to achieve the project requirements</li>
-    <li> Coordinate with the client the different requests</li>
-</ul>
-<h2>Date:</h2>
-<p>October 2019- July 2021</p>
-<hr>
-
-<h3>Company name</h3>
-<p>Project SUS-TER, Universidad de Caldas</p>
-<h3>Charge</h3>
-<p>PROFESSIONAL SERVICES CONTRACTOR IN INDUSTRIAL 		ENGINEERING
-</p>
-<h3>Functions</h3>
-<ul>
-    <li>Carry out the required online 	research, identify data sources and systematize information from secondary sources, according to the objectives of the project.</li>
-    <li>Support the processes of documentation, transcription, and organization of the information obtained in the investigation</li>
-    <li> Perform activities to support administrative and logistics management related to the development of the project.
-    </li>
-    
-</ul>
-<h2>Date:</h2>
-<p>April 2019 - October 2019</p>
-<hr>
-
-
-
-
-<h3><a href="movie-ranking.html">Movie Ranking Project</a></h3>
-<img style="height: 400px;" src="/images/MoviesSc.png" alt="Best movies according to Alejandro">
-<h3><a href="Birthday-invite.html">Birthday Project</a></h3>
-<img src="/images/birthdaysc.png" alt="Best movies according to Alejandro" style="height: 400px;">
-<hr>
-<a href="/contactme.html">Contact me </a>
-<a href="/aboutme.html  ">About me</a>
-
 <body>
 
-</body>
+<nav>
+  <div class="wrap bar">
+    <div class="mono-logo">D<span>C</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a class="badge" href="#">ENG <b>C1</b></a>
+    </div>
+  </div>
+</nav>
 
+<header>
+  <div class="wrap">
+    <div class="kicker">
+      <span class="dot"></span>
+      <span class="label">Bogotá · Colombia — Open to remote</span>
+      <span class="label">// Digital Marketing PM</span>
+    </div>
+    <h1 class="giant">David<br><em>Cardona</em></h1>
+
+    <div class="hero-grid">
+      <div>
+        <p class="role">Digital Marketing <b>Project Manager</b> — turning complex content & SEO strategy into on-time delivery, powered by AI automation.</p>
+        <div class="meta-row">
+          <span class="chip">5+ yrs in PM</span>
+          <span class="chip">Content · SEO · Strategy</span>
+          <span class="chip">AI Automation</span>
+          <span class="chip">Industrial Engineer</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:alejandrocardona710@gmail.com">✉ Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/david-cardona-9676a226/" target="_blank" rel="noopener">in / LinkedIn</a>
+          <a class="btn" href="https://github.com/Dalcamo" target="_blank" rel="noopener">⌥ GitHub</a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="images/foto.jpg" alt="David Cardona">
+        <span class="tag">DC · 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span class="item">ClickUp <span class="s">✦</span> Semrush <span class="s">✦</span> Ahrefs <span class="s">✦</span> Screaming Frog <span class="s">✦</span> n8n <span class="s">✦</span> Claude <span class="s">✦</span> ChatGPT <span class="s">✦</span> GA4 <span class="s">✦</span> Notion <span class="s">✦</span> Trello <span class="s">✦</span> Monday.com <span class="s">✦</span> Figma <span class="s">✦</span> </span>
+    <span class="item">ClickUp <span class="s">✦</span> Semrush <span class="s">✦</span> Ahrefs <span class="s">✦</span> Screaming Frog <span class="s">✦</span> n8n <span class="s">✦</span> Claude <span class="s">✦</span> ChatGPT <span class="s">✦</span> GA4 <span class="s">✦</span> Notion <span class="s">✦</span> Trello <span class="s">✦</span> Monday.com <span class="s">✦</span> Figma <span class="s">✦</span> </span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01 / ABOUT</span>
+      <h2 class="sec-title">Process meets<br>creativity</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="lede">With <b>over 5 years</b> managing digital marketing and content projects across agencies and tech companies, I turn complex strategies into well-executed, on-time deliverables.</p>
+        <p class="body-txt">At iVisa I lead a team of 6–10 writers and SEO specialists, coordinating content creation and deployment across multiple markets and languages — and building AI-powered automation that streamlines production. Before that, at McCann Colombia and Ariadna Communications Group, I managed end-to-end marketing projects for clients in health and consumer sectors, from brief intake and budget planning to cross-functional coordination and final delivery.</p>
+        <p class="body-txt">I hold an Industrial Engineering degree from Universidad Nacional de Colombia, which gives me a strong foundation in process optimization, resource planning, and data-driven decision-making — skills I apply daily in fast-paced marketing environments.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="n">200</div><div class="t">Monthly content pieces shipped</div></div>
+        <div class="stat"><div class="n">6–10</div><div class="t">Writers & SEO specialists led</div></div>
+        <div class="stat"><div class="n">8+</div><div class="t">Client accounts managed at once</div></div>
+        <div class="stat"><div class="n">5+</div><div class="t">Years in project management</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">02 / EXPERIENCE</span>
+      <h2 class="sec-title">Selected<br>track record</h2>
+    </div>
+    <div class="exp">
+
+      <div class="exp-item reveal">
+        <div class="idx">01</div>
+        <div>
+          <div class="exp-co">iVisa</div>
+          <div class="exp-role">Content Project Manager</div>
+          <div class="exp-when">Aug 2022 — Present · 3 yrs 11 mos</div>
+          <div class="exp-loc">Remote</div>
+        </div>
+        <ul class="exp-pts">
+          <li>Manage end-to-end production of ~200 monthly content pieces — blogs, social, PR and CRM — ensuring on-time delivery across multiple international markets.</li>
+          <li>Lead a team of 6–10 writers and SEO specialists, coordinating workflows in ClickUp and aligning output with SEO strategy via Semrush, Ahrefs and Screaming Frog.</li>
+          <li>Designed AI-powered automation with n8n and Claude/ChatGPT, integrating ClickUp to auto-generate content briefs — significantly cutting drafting time.</li>
+          <li>Built custom performance dashboards integrating ClickUp and Google Analytics through Claude, enabling real-time visibility into output and SEO performance.</li>
+          <li>Expanded content operations to new languages and markets, reducing delivery turnaround through process automation.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="idx">02</div>
+        <div>
+          <div class="exp-co">McCann Colombia</div>
+          <div class="exp-role">Project Manager Senior</div>
+          <div class="exp-when">Jul 2021 — Aug 2022 · 1 yr 2 mos</div>
+          <div class="exp-loc">Colombia</div>
+        </div>
+        <ul class="exp-pts">
+          <li>Managed 8+ client accounts simultaneously, overseeing 15+ concurrent projects across web development, AWS server management and site maintenance.</li>
+          <li>Coordinated cross-functional teams across design, development and infrastructure to deliver on scope, on budget and on time.</li>
+          <li>Served as the main point of contact between clients and technical teams, ensuring clear communication and high satisfaction.</li>
+          <li>Built and managed budgets and timelines in Monday.com, optimizing resource allocation across multiple active engagements.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="idx">03</div>
+        <div>
+          <div class="exp-co">La Academia by Ariadna</div>
+          <div class="exp-role">Project Manager</div>
+          <div class="exp-when">Mar 2020 — Jul 2021 · 1 yr 5 mos</div>
+          <div class="exp-loc">Colombia</div>
+        </div>
+        <ul class="exp-pts">
+          <li>Developed and managed partnerships with universities across Colombia, leading the full cycle from contact and negotiation to program delivery.</li>
+          <li>Bridged industry and academia by bringing specialized marketing expertise — SEO, Paid Media and Digital Strategy — to underserved students.</li>
+          <li>Coordinated cross-functional teams to design and deliver tailored educational programs aligned with each university's objectives.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="idx">04</div>
+        <div>
+          <div class="exp-co">Ariadna Comm. Group</div>
+          <div class="exp-role">Project Manager Marketing — Health</div>
+          <div class="exp-when">Oct 2019 — Jul 2021 · 1 yr 10 mos</div>
+          <div class="exp-loc">Colombia</div>
+        </div>
+        <ul class="exp-pts">
+          <li>Managed 360° marketing strategies for 6 clients across web development, SEO, Paid Media, CRM, PR and design.</li>
+          <li>Translated client briefs into detailed proposals, scopes of work and execution roadmaps, bridging strategy and delivery.</li>
+          <li>Orchestrated cross-functional teams to ensure integrated campaign execution aligned with each client's objectives.</li>
+          <li>Used Trello and Notion to manage pipelines, track deliverables and maintain visibility across all active initiatives.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="idx">05</div>
+        <div>
+          <div class="exp-co">Universidad de Caldas</div>
+          <div class="exp-role">Contractor · SUS-TER Project</div>
+          <div class="exp-when">Mar 2019 — Oct 2019 · 8 mos</div>
+          <div class="exp-loc">Manizales</div>
+        </div>
+        <ul class="exp-pts">
+          <li>Supported coordination of an Erasmus-funded international project on sustainable territorial development with universities, agencies and rural communities.</li>
+          <li>Served as liaison between diverse stakeholders — indigenous communities, cooperatives and public institutions — ensuring alignment across workstreams.</li>
+          <li>Gained foundational experience in project coordination and stakeholder management.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="idx">06</div>
+        <div>
+          <div class="exp-co">Gralco SA</div>
+          <div class="exp-role">Planning Analyst</div>
+          <div class="exp-when">Jun 2018 — Nov 2018 · 6 mos</div>
+          <div class="exp-loc">Barranquilla</div>
+        </div>
+        <ul class="exp-pts">
+          <li>Planned plant production against demand forecasts and process constraints, ensuring supply continuity and operational efficiency.</li>
+          <li>Tracked raw material and packaging projections to meet production targets while maintaining minimum inventory levels.</li>
+          <li>Analyzed inventory turnover and flagged obsolete or slow-moving products, supporting data-driven decisions.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="idx">07</div>
+        <div>
+          <div class="exp-co">Postobón S.A.</div>
+          <div class="exp-role">Production Analyst</div>
+          <div class="exp-when">May 2017 — Apr 2018 · 1 yr</div>
+          <div class="exp-loc">Barranquilla</div>
+        </div>
+        <ul class="exp-pts">
+          <li>Conducted daily production tracking and equipment availability checks to maintain scheduling continuity and prevent downtime.</li>
+          <li>Executed inspection and testing across production processes, monitoring critical variables to ensure quality standards.</li>
+          <li>Supported preventive and corrective action follow-up, contributing to continuous process improvement.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03 / CREDENTIALS</span>
+      <h2 class="sec-title">Education &<br>languages</h2>
+    </div>
+    <div class="two reveal">
+      <div class="panel">
+        <h3>Education</h3>
+        <div class="edu-item">
+          <div class="d">Industrial Engineering</div>
+          <div class="s">Universidad Nacional de Colombia · 2009–2015</div>
+        </div>
+        <h3 style="margin-top:34px">Top skills</h3>
+        <ul class="list-clean">
+          <li><span>+</span> Agile Project Management</li>
+          <li><span>+</span> Resource Planning</li>
+          <li><span>+</span> SEO & content strategy (Semrush, Ahrefs)</li>
+          <li><span>+</span> AI workflow automation (n8n, Claude, ChatGPT)</li>
+          <li><span>+</span> Data & dashboards (GA4)</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Languages</h3>
+        <div class="lang-bar">
+          <div class="top"><span>Español</span><em>Native / Bilingual</em></div>
+          <div class="track-bg"><div class="track-fill" data-w="100%"></div></div>
+        </div>
+        <div class="lang-bar">
+          <div class="top"><span>English</span><em>C1 — Full Professional</em></div>
+          <div class="track-bg"><div class="track-fill" data-w="85%"></div></div>
+        </div>
+        <h3 style="margin-top:34px">Certifications</h3>
+        <ul class="list-clean">
+          <li><span>›</span> Gestión ágil: Liderando el cambio en un ambiente de agilidad</li>
+          <li><span>›</span> EF SET English Certificate — 64/100 (C1 Advanced)</li>
+          <li><span>›</span> Project Initiation: Starting a Successful Project</li>
+          <li><span>›</span> Formación en Programación F2T2 — ONE</li>
+          <li><span>›</span> Figma: Working with Clients</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="label">04 / Contact</span>
+    <div class="contact-giant"><a href="mailto:alejandrocardona710@gmail.com">Let's<br>build →</a></div>
+    <p class="label">Available for digital marketing & content PM roles — remote-friendly.</p>
+    <div class="contact-links">
+      <a href="mailto:alejandrocardona710@gmail.com">✉ alejandrocardona710@gmail.com</a>
+      <a href="https://www.linkedin.com/in/david-cardona-9676a226/" target="_blank" rel="noopener">in / LinkedIn</a>
+      <a href="https://github.com/Dalcamo" target="_blank" rel="noopener">⌥ GitHub</a>
+    </div>
+    <footer>
+      <span>© 2026 David Cardona — Digital Marketing PM</span>
+      <span>Built with HTML/CSS · Editorial / Brutalist</span>
+    </footer>
+  </div>
+</section>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        if(e.target.querySelector('.track-fill')||e.target.classList.contains('two')){
+          e.target.querySelectorAll('.track-fill').forEach(f=>f.style.width=f.dataset.w);
+        }
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Stagger experience items slightly
+  document.querySelectorAll('.exp-item').forEach((el,i)=>{el.style.transitionDelay=(i%3*0.06)+'s';});
+</script>
+</body>
 </html>
